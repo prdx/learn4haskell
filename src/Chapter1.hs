@@ -325,7 +325,7 @@ True
 >>> min 5 (max 1 2)
 2
 >>> max (min 1 10) (min 5 7)
-10
+5
 
 Because Haskell is a __statically-typed__ language, you see an error each time
 you try to mix values of different types in situations where you are not
