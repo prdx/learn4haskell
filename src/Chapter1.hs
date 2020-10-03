@@ -632,7 +632,7 @@ sumLast2 :: Int -> Int
 sumLast2 n = secondDigit (n) + lastDigit n
   where
     secondDigit :: Int -> Int
-    secondDigit n = lastDigit (div (abs n) 10)
+    secondDigit x = lastDigit (div (abs x) 10)
 
 
 {- |
@@ -653,8 +653,11 @@ You need to use recursion in this task. Feel free to return to it later, if you
 aren't ready for this boss yet!
 -}
 
+firstDigit :: Int -> Int
+
 firstDigit n =
-  if n < 10 then n else firstDigit (div n 10)
+  let absN = abs n in
+  (if absN < 10 then absN else firstDigit (div absN 10))
 
 {-
 You did it! Now it is time to the open pull request with your changes
